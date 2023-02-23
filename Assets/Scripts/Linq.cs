@@ -5,12 +5,14 @@ using System.Linq;
 
 public class Linq : MonoBehaviour
 {
+
+
     [SerializeField] private GameObject[] _cubes;
     [SerializeField] private int[] _quizGrades = { 44,55,32,77,95,99,88};
     // Start is called before the first frame update
     void Start()
     {
-
+        SpawnManagerSingleton.Instance.Testing();
          var passingGrades = _quizGrades.Where(quiz => quiz > 69).OrderByDescending(g=>g).Reverse();
          
         foreach(var grade in passingGrades)
